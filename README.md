@@ -9,4 +9,5 @@ This program compares few Machine Learning Algoritms and outputs their score. Th
 3. K Nearest Neighbors
 4. Support Vector Machine
 5. Naive Bayes Theorem
+6. Decision Tree
 
