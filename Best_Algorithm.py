@@ -29,6 +29,9 @@ x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size
 linear_classifier = LinearRegression()
 linear_classifier.fit(x_train, y_train)
 
+#Test data 1
+#linear_prediction = linear_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 linear_prediction = linear_classifier.predict(x_test)
 
 linear_score = linear_classifier.score(x_test, linear_prediction)
@@ -40,6 +43,9 @@ print("Linear Regression Score: ", linear_score)
 kmeans_classifier = KMeans(n_clusters=3)
 kmeans_classifier.fit(x_train, y_train)
 
+#Test data 1
+#kmeans_prediction = kmeans_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 kmeans_prediction = kmeans_classifier.predict(x_test)
 
 kmeans_score = 0
@@ -56,6 +62,9 @@ print("KMeans Score: ", kmeans_score / len(kmeans_prediction))
 knn_classifier = KNeighborsClassifier(n_neighbors=4)
 knn_classifier.fit(x_train, y_train)
 
+#Test data 1
+#knn_prediction = knn_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 knn_prediction = knn_classifier.predict(x_test)
 
 knn_score = 0
@@ -72,6 +81,9 @@ print("KNN Score: ", knn_score / len(knn_prediction))
 svm_classifier = svm.SVR(kernel='rbf')
 svm_classifier.fit(x_train, y_train)
 
+#Test data 1
+#svm_prediction = svm_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 svm_prediction = svm_classifier.predict(x_test)
 
 svm_score = svm_classifier.score(x_test, svm_prediction)
@@ -83,6 +95,9 @@ print("SVM Score: ", svm_score)
 nb_classifier = GaussianNB()
 nb_classifier.fit(x_train, y_train)
 
+#Test data 1
+#nb_prediction = nb_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 nb_prediction = nb_classifier.predict(x_test)
 
 nb_score = 0
@@ -99,8 +114,10 @@ print("Naive Bayes Score: ", nb_score / len(nb_prediction))
 dt_classifier = DecisionTreeClassifier()
 dt_classifier.fit(x_train, y_train)
 
+#Test data 1
+#dt_prediction = dt_classifier.predict([[4.3, 7.2, 3.3, 5.1]])
+#Test data 2
 dt_prediction = dt_classifier.predict(x_test)
-
 dt_score = 0
 dt_cm = confusion_matrix(dt_prediction, y_test)
 for i in range(len(dt_cm)):
