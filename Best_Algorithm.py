@@ -11,6 +11,7 @@ from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
@@ -92,3 +93,20 @@ for i in range(len(nb_cm)):
             nb_score += nb_cm[i][j]
             
 print("Naive Bayes Score: ", nb_score / len(nb_prediction))
+
+
+#Decision Tree
+dt_classifier = DecisionTreeClassifier()
+dt_classifier.fit(x_train, y_train)
+
+dt_prediction = dt_classifier.predict(x_test)
+
+dt_score = 0
+dt_cm = confusion_matrix(dt_prediction, y_test)
+for i in range(len(dt_cm)):
+    for j in range(len(dt_cm[i])):
+        if i == j:
+            dt_score += dt_cm[i][j]
+            
+            
+print("Decision Tree Score: ", dt_score / len(dt_prediction))
