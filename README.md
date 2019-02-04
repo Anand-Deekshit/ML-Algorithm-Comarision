@@ -1,4 +1,4 @@
-# ML-Algorithm-Comarision
+# ML-Algorithm-Comparision
 
 # Overview
 This program compares few Machine Learning Algoritms and outputs their score. The dataset used is the iris dataset.
